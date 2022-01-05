@@ -1,7 +1,7 @@
 import '../fake-db'
 import React from 'react'
 import { Provider } from 'react-redux'
-import { Router, Switch, Route, HashRouter  } from 'react-router-dom'
+import { Router, Switch, Route, BrowserRouter } from 'react-router-dom'
 import AppContext from './contexts/AppContext'
 import history from 'history.js'
 import routes from './RootRoutes'
@@ -19,8 +19,8 @@ const App = () => {
                 <SettingsProvider>
                     <MatxTheme>
                         <GlobalCss />
-                        <HashRouter basename="/teste_gh_pages">
-                        <Router history={history}>
+                        <BrowserRouter>
+                        <Router history={history} basename={process.env.PUBLIC_URL}>
                             <AuthProvider>
                                 <MatxSuspense>
                                     <Switch>
@@ -41,7 +41,7 @@ const App = () => {
                                 </MatxSuspense>
                             </AuthProvider>
                         </Router>
-                        </HashRouter >
+                        </BrowserRouter>
                     </MatxTheme>
                 </SettingsProvider>
             </Provider>
