@@ -19,8 +19,8 @@ const App = () => {
                 <SettingsProvider>
                     <MatxTheme>
                         <GlobalCss />
-                        <BrowserRouter basename={process.env.PUBLIC_URL}>
-                        <Router history={history}>
+                        <HashRouter basename={process.env.PUBLIC_URL}>
+                        <Router history={history} path={process.env.PUBLIC_URL + '/'}>
                             <AuthProvider>
                                 <MatxSuspense>
                                     <Switch>
@@ -41,7 +41,7 @@ const App = () => {
                                 </MatxSuspense>
                             </AuthProvider>
                         </Router>
-                        </BrowserRouter>
+                        </HashRouter>
                     </MatxTheme>
                 </SettingsProvider>
             </Provider>
