@@ -19,7 +19,7 @@ const App = () => {
                 <SettingsProvider>
                     <MatxTheme>
                         <GlobalCss />
-                        <HashRouter basename={process.env.PUBLIC_URL}>
+                        <HashRouter>
                         <Router history={history} path={process.env.PUBLIC_URL + '/'}>
                             <AuthProvider>
                                 <MatxSuspense>
