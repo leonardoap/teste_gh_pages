@@ -19,7 +19,7 @@ const App = () => {
                 <SettingsProvider>
                     <MatxTheme>
                         <GlobalCss />
-                        <BrowserRouter basename={process.env.PUBLIC_URL}>
+                        <BrowserRouter basename={process.env.REACT_APP_PUBLIC_URL}>
                         <Router history={history}>
                             <AuthProvider>
                                 <MatxSuspense>
